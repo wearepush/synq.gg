@@ -1,5 +1,5 @@
-@import '../../styles/variables';
-@import '../../styles/mixins';
+@import "../../styles/variables";
+@import "../../styles/mixins";
 
 .header {
   padding: 32px 0;
@@ -9,7 +9,7 @@
   // left: 0;
   // z-index: 100;
 
-  @include breakpoint('phone-max') {
+  @include breakpoint("phone-max") {
     padding: 16px 0;
   }
 
@@ -21,12 +21,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    letter-spacing: -.408px;
+    letter-spacing: -0.408px;
 
-    @include breakpoint('phone-max') {
+    @include breakpoint("phone-max") {
       padding: 0 24px;
     }
-
   }
 
   &__logo {
@@ -44,7 +43,7 @@
     &__content {
       position: relative;
       z-index: 2;
-      @include breakpoint('phone-max') {
+      @include breakpoint("phone-max") {
         display: none;
       }
     }
@@ -79,10 +78,9 @@
     position: relative;
     z-index: 2;
 
-    @include breakpoint('phone') {
+    @include breakpoint("phone") {
       padding-left: 12px;
       padding-right: 12px;
     }
   }
-
 }
