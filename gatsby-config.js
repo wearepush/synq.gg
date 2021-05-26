@@ -1,18 +1,25 @@
 module.exports = {
   siteMetadata: {
-    title: "synq",
+    title: "SYNQ",
   },
   plugins: [
-    "gatsby-plugin-sass",
-    "gatsby-plugin-image",
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: "gatsby-plugin-react-svg",
       options: {
-        trackingId: "",
+        rule: {
+          include: /\.inline\.svg$/,
+        },
       },
     },
+    "gatsby-plugin-sass",
+    "gatsby-plugin-image",
+    // {
+    //   resolve: "gatsby-plugin-google-analytics",
+    //   options: {
+    //     trackingId: "",
+    //   },
+    // },
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
