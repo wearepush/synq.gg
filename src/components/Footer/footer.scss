@@ -81,9 +81,17 @@ $footer: 'footer';
     @include breakpoint('phone-max') {
       font-size: 13px;
     }
+  }
 
-    & > span {
-      color: var(--text-color-light);
+  &__link {
+    color: var(--text-color-light);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover,
+    &:focus {
+      color: var(--hover-color);
     }
   }
 
