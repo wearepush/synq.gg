@@ -11,8 +11,7 @@ const Footer = () => (
           <div className="footer__logo__slogan">Connects sport fans to what they love</div>
         </div>
       </div>
-      <a></a>
-      <div className="footer__text">Design by <a href="" className="footer__link">Flatstudio</a></div>
+      <div className="footer__text">Design by <a href="#" className="footer__link">Flatstudio</a></div>
     </div>
   </footer>
 );

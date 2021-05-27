@@ -35,7 +35,7 @@ $footer: 'footer';
     align-items: center;
 
     @include breakpoint('phone-max') {
-      margin-bottom: 14px;
+      margin-bottom: 11px;
     }
 
     &__icon {

@@ -4,9 +4,12 @@
 .section {
   background-color: var(--background-color-light);
   border-radius: 0 0 36px 36px;
-  padding-bottom: 80px;
-  padding: 88px 0 80px;
+  padding: 88px 0 58px;
   position: relative;
+
+  @include breakpoint('phone-max') {
+    border-radius: 0 0 26px 26px;
+  }
 
   &:after {
     content: '';
@@ -47,7 +50,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    max-width: 604px;
     width: 100%;
     margin: 0 auto 140px;
     position: relative;
@@ -93,21 +96,17 @@
     display: flex;
     align-items: center;
     justify-self: center;
-    max-width: 962px;
+    max-width: 1234px;
     width: 100%;
-    margin: 0 auto 80px;
+    margin: 0 auto;
     position: relative;
     z-index: 2;
 
     @include breakpoint('phone-max') {
-
-      min-height: 500px;
-      max-width: 336px;
-
-    }
-    @media (max-width: 514px) {
-      overflow: hidden;
       max-width: 100%;
+      height: 0;
+      padding-bottom: 140%;
+      overflow: hidden;
     }
   }
 
@@ -116,6 +115,7 @@
 
     @include breakpoint('phone-max') {
       position: absolute;
+      top: 0;
     }
 
     & > img {
@@ -130,35 +130,37 @@
         left: 50%;
         right: 50%;
         transform: translate(-50%);
-        width: 214px;
+        width: 64%;
       }
     }
 
     &--right,
     &--left {
       @include breakpoint('phone-max') {
-        width: 168px;
+        width: 53%;
+        top: 50%;
+        margin-top: -17px;
       }
     }
 
     &--right {
-      left: -46px;
+      left: -103px;
 
       @include breakpoint('phone-max') {
         left: auto;
         right: 0;
-        transform: translateX(82px);
+        transform: translate(39%, -50%);
 
       }
     }
 
     &--left {
-      right: -46px;
+      right: -103px;
 
       @include breakpoint('phone-max') {
         right: auto;
         left: 0;
-        transform: translateX(-82px);
+        transform: translate(-39%, -50%);
       }
     }
   }
