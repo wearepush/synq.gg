@@ -6,6 +6,28 @@
   border-radius: 0 0 15px 15px;
   padding-bottom: 80px;
   padding: 88px 0 80px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: 0;
+    right: 0;
+    background: url('../../images/bg/home-bg.svg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 1048px;
+    max-width: 1048px;
+    z-index: 1;
+
+    @include breakpoint('phone-max') {
+      background: url('../../images/bg/home-bg-mobile.svg') no-repeat center;
+      height: 448px;
+      max-width: 100%;
+      top: -101px;
+    }
+  }
 
   @include breakpoint("phone-max") {
     padding: 70px 0 80px;
@@ -77,13 +99,24 @@
     position: relative;
     z-index: 2;
 
-    @include breakpoint("phone-max") {
+    @include breakpoint('phone-max') {
+
+      min-height: 500px;
+      max-width: 336px;
+
+    }
+    @media (max-width: 514px) {
+      overflow: hidden;
       max-width: 100%;
     }
   }
 
   &__image-item {
     position: relative;
+
+    @include breakpoint('phone-max') {
+      position: absolute;
+    }
 
     & > img {
       max-width: 100%;
@@ -92,29 +125,40 @@
     &--main {
       z-index: 3;
 
-      @include breakpoint("phone-max") {
+      @include breakpoint('phone-max') {
+
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%);
+        width: 214px;
       }
     }
 
     &--right,
     &--left {
-      @include breakpoint("phone-max") {
+      @include breakpoint('phone-max') {
+        width: 168px;
       }
     }
 
     &--right {
       left: -46px;
 
-      @include breakpoint("phone-max") {
-        left: -28px;
+      @include breakpoint('phone-max') {
+        left: auto;
+        right: 0;
+        transform: translateX(82px);
+
       }
     }
 
     &--left {
       right: -46px;
 
-      @include breakpoint("phone-max") {
-        right: -28px;
+      @include breakpoint('phone-max') {
+        right: auto;
+        left: 0;
+        transform: translateX(-82px);
       }
     }
   }
