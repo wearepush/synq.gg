@@ -7,25 +7,25 @@
   padding: 88px 0 58px;
   position: relative;
 
-  @include breakpoint('phone-max') {
+  @include breakpoint("phone-max") {
     border-radius: 0 0 26px 26px;
   }
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: -150px;
     left: 0;
     right: 0;
-    background: url('../../images/bg/home-bg.svg') no-repeat center;
+    background: url("../../images/bg/home-bg.svg") no-repeat center;
     background-size: cover;
     width: 100%;
     height: 1048px;
     max-width: 1048px;
     z-index: 1;
 
-    @include breakpoint('phone-max') {
-      background: url('../../images/bg/home-bg-mobile.svg') no-repeat center;
+    @include breakpoint("phone-max") {
+      background: url("../../images/bg/home-bg-mobile.svg") no-repeat center;
       height: 448px;
       max-width: 100%;
       top: -101px;
@@ -102,7 +102,7 @@
     position: relative;
     z-index: 2;
 
-    @include breakpoint('phone-max') {
+    @include breakpoint("phone-max") {
       max-width: 100%;
       height: 0;
       padding-bottom: 140%;
@@ -113,20 +113,20 @@
   &__image-item {
     position: relative;
 
-    @include breakpoint('phone-max') {
+    @include breakpoint("phone-max") {
       position: absolute;
       top: 0;
     }
 
-    & > img {
+    img,
+    picture {
       max-width: 100%;
       width: 100%;
     }
     &--main {
       z-index: 3;
 
-      @include breakpoint('phone-max') {
-
+      @include breakpoint("phone-max") {
         left: 50%;
         right: 50%;
         transform: translate(-50%);
@@ -136,7 +136,7 @@
 
     &--right,
     &--left {
-      @include breakpoint('phone-max') {
+      @include breakpoint("phone-max") {
         width: 53%;
         top: 50%;
         margin-top: -17px;
@@ -146,18 +146,17 @@
     &--right {
       left: -103px;
 
-      @include breakpoint('phone-max') {
+      @include breakpoint("phone-max") {
         left: auto;
         right: 0;
         transform: translate(39%, -50%);
-
       }
     }
 
     &--left {
       right: -103px;
 
-      @include breakpoint('phone-max') {
+      @include breakpoint("phone-max") {
         right: auto;
         left: 0;
         transform: translate(-39%, -50%);
@@ -198,10 +197,7 @@
 
       &:focus {
         border-color: var(--border-color-primary) !important;
-
       }
-
-
     }
 
     &__button {

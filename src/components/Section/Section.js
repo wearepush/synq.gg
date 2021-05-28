@@ -1,8 +1,21 @@
 import React from "react";
 import "./section.scss";
-import MainImage from "../../images/center-image-item-2x.webp";
-import LeftImage from "../../images/left-image-item-2x.webp";
-import RightImage from "../../images/right-image-item-2x.webp";
+
+import MainImageWebp from "../../images/center-image-item-2x.webp";
+import MainImagePng from "../../images/center-image-item-2x.png";
+import LeftImageWebp from "../../images/left-image-item-2x.webp";
+import LeftImagePng from "../../images/left-image-item-2x.png";
+import RightImageWebp from "../../images/right-image-item-2x.webp";
+import RightImagePng from "../../images/right-image-item-2x.png";
+
+const Image = ({ alt, webp, png }) => {
+  return (
+    <picture>
+      <source type="image/webp" srcset={webp} />
+      <img src={png} alt={alt} />
+    </picture>
+  );
+};
 
 const Section = () => (
   <div className="section">
@@ -27,13 +40,13 @@ const Section = () => (
     </div>
     <div className="section__image-list">
       <div className="section__image-item section__image-item--left">
-        <img src={LeftImage} alt="synq 1" />
+        <Image png={LeftImagePng} webp={LeftImageWebp} alt="synq 1" />
       </div>
       <div className="section__image-item section__image-item--main">
-        <img src={MainImage} alt="synq 2" />
+        <Image png={MainImagePng} webp={MainImageWebp} alt="synq 2" />
       </div>
       <div className="section__image-item section__image-item--right">
-        <img src={RightImage} alt="synq 3" />
+        <Image png={RightImageWebp} webp={RightImagePng} alt="synq 3" />
       </div>
     </div>
   </div>
