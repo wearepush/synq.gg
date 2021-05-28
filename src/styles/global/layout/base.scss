@@ -24,3 +24,11 @@ body {
   letter-spacing: -0.408px;
   background-color: var(--background-color-dark);
 }
+
+textarea:focus, input:focus{
+  outline: none;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline-offset: 0px;
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import "./section.scss";
-import MainImage from "../../images/center-image-item.webp";
-import LeftImage from "../../images/left-image-item.webp";
-import RightImage from "../../images/right-image-item.webp";
+import MainImage from "../../images/center-image-item-2x.webp";
+import LeftImage from "../../images/left-image-item-2x.webp";
+import RightImage from "../../images/right-image-item-2x.webp";
 
 const Section = () => (
   <div className="section">
