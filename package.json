@@ -16,6 +16,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "gatsby": "^3.4.1",
     "gatsby-plugin-google-analytics": "^3.6.0",
     "gatsby-plugin-image": "^1.6.0",

@@ -1,38 +1,46 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .section {
+  --section-anim-delay: 0.1s;
+  --section-anim-offset: 0.2s;
+  --section-image-anim-delay: 1.2s;
+
   background-color: var(--background-color-light);
   border-radius: 0 0 36px 36px;
   padding: 88px 0 58px;
   position: relative;
 
-  @include breakpoint("phone-max") {
+  @include breakpoint('phone-max') {
     border-radius: 0 0 26px 26px;
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: -150px;
     left: 0;
     right: 0;
-    background: url("../../images/bg/home-bg.svg") no-repeat center;
+    background: url('../../images/bg/home-bg.svg') no-repeat center;
     background-size: cover;
     width: 100%;
     height: 1048px;
     max-width: 1048px;
     z-index: 1;
 
-    @include breakpoint("phone-max") {
-      background: url("../../images/bg/home-bg-mobile.svg") no-repeat center;
+    @include anim-init-fade-scale-in();
+    animation: fade-scale-in var(--anim-medium-duration) var(--section-anim-delay)
+      var(--anim-easing-in) forwards;
+
+    @include breakpoint('phone-max') {
+      background: url('../../images/bg/home-bg-mobile.svg') no-repeat center;
       height: 448px;
       max-width: 100%;
       top: -101px;
     }
   }
 
-  @include breakpoint("phone-max") {
+  @include breakpoint('phone-max') {
     padding: 70px 0 80px;
   }
 
@@ -42,7 +50,7 @@
     width: 100%;
     padding: 0 48px;
 
-    @include breakpoint("phone-max") {
+    @include breakpoint('phone-max') {
       padding: 0 24px;
     }
   }
@@ -56,9 +64,18 @@
     position: relative;
     z-index: 2;
 
-    @include breakpoint("phone-max") {
+    @include breakpoint('phone-max') {
       max-width: 100%;
     }
+  }
+
+  &__pre-title,
+  &__title,
+  &__form {
+    @include anim-init-reveal-in-from-bottom();
+    animation: reveal-in-from-bottom var(--anim-long-duration)
+      calc(var(--section-anim-delay) + var(--section-anim-offset)) var(--anim-easing-in-back)
+      forwards;
   }
 
   &__pre-title {
@@ -69,7 +86,7 @@
     margin-bottom: 10px;
     text-transform: capitalize;
 
-    @include breakpoint("phone-max") {
+    @include breakpoint('phone-max') {
       font-size: 20px;
       line-height: 28px;
     }
@@ -82,7 +99,9 @@
     font-weight: bold;
     margin-bottom: 34px;
 
-    @include breakpoint("phone-max") {
+    animation-delay: calc(var(--section-anim-delay) + var(--section-anim-offset) * 2);
+
+    @include breakpoint('phone-max') {
       font-size: 28px;
       line-height: 39px;
     }
@@ -102,7 +121,17 @@
     position: relative;
     z-index: 2;
 
-    @include breakpoint("phone-max") {
+    &--is-main-anim-end {
+      .section__image-item {
+        &--left,
+        &--right {
+          visibility: visible;
+          animation: slide-rotate-in calc(var(--anim-default-duration) * 2) var(--anim-easing-in-out) forwards;
+        }
+      }
+    }
+
+    @include breakpoint('phone-max') {
       max-width: 100%;
       height: 0;
       padding-bottom: 140%;
@@ -113,7 +142,7 @@
   &__image-item {
     position: relative;
 
-    @include breakpoint("phone-max") {
+    @include breakpoint('phone-max') {
       position: absolute;
       top: 0;
     }
@@ -126,7 +155,11 @@
     &--main {
       z-index: 3;
 
-      @include breakpoint("phone-max") {
+      @include anim-init-fade-scale-in();
+      animation: fade-scale-in var(--anim-medium-duration) var(--section-image-anim-delay)
+        var(--anim-easing-in-back) forwards;
+
+      @include breakpoint('phone-max') {
         left: 50%;
         right: 50%;
         transform: translate(-50%);
@@ -136,7 +169,10 @@
 
     &--right,
     &--left {
-      @include breakpoint("phone-max") {
+      visibility: hidden;
+      @include anim-init-slide-rotate-in();
+
+      @include breakpoint('phone-max') {
         width: 53%;
         top: 50%;
         margin-top: -17px;
@@ -144,9 +180,11 @@
     }
 
     &--right {
+      --anim-slide-x: -80%;
+      --anim-rotate-y: -30deg;
       left: -103px;
 
-      @include breakpoint("phone-max") {
+      @include breakpoint('phone-max') {
         left: auto;
         right: 0;
         transform: translate(39%, -50%);
@@ -154,9 +192,11 @@
     }
 
     &--left {
+      --anim-slide-x: 80%;
+      --anim-rotate-y: 30deg;
       right: -103px;
 
-      @include breakpoint("phone-max") {
+      @include breakpoint('phone-max') {
         right: auto;
         left: 0;
         transform: translate(-39%, -50%);
@@ -172,7 +212,9 @@
     display: flex;
     align-items: center;
 
-    @include breakpoint("phone-max") {
+    animation-delay: calc(var(--section-anim-delay) + var(--section-anim-offset) * 3);
+
+    @include breakpoint('phone-max') {
       max-width: 100%;
     }
 
@@ -187,7 +229,7 @@
       max-width: 294px;
       width: 100%;
 
-      @include breakpoint("phone-max") {
+      @include breakpoint('phone-max') {
         max-width: 100%;
       }
 
@@ -210,7 +252,7 @@
       line-height: 24px;
       font-weight: 600;
 
-      @include breakpoint("phone-max") {
+      @include breakpoint('phone-max') {
         padding: 19px 20px;
       }
     }

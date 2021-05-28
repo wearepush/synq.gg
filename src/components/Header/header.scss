@@ -1,7 +1,10 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .header {
+  --header-anim-delay: 1s;
+  --header-anim-delay-offset: 0.2s;
+
   background-color: var(--background-color-light);
   padding: 32px 0;
   // position: fixed;
@@ -10,7 +13,7 @@
   // left: 0;
   // z-index: 100;
 
-  @include breakpoint("phone-max") {
+  @include breakpoint('phone-max') {
     padding: 16px 0;
   }
 
@@ -24,9 +27,17 @@
     justify-content: space-between;
     letter-spacing: -0.408px;
 
-    @include breakpoint("phone-max") {
+    @include breakpoint('phone-max') {
       padding: 0 24px;
     }
+  }
+
+  &__logo,
+  &__button {
+    --anim-slide-y: -60%;
+    @include anim-init-fade-slide-in();
+    animation: fade-slide-in var(--anim-medium-duration) var(--header-anim-delay)
+      var(--anim-easing-in-back) forwards;
   }
 
   &__logo {
@@ -44,7 +55,7 @@
     &__content {
       position: relative;
       z-index: 2;
-      @include breakpoint("phone-max") {
+      @include breakpoint('phone-max') {
         display: none;
       }
     }
@@ -79,7 +90,9 @@
     position: relative;
     z-index: 2;
 
-    @include breakpoint("phone") {
+    animation-delay: calc(var(--header-anim-delay) + var(--header-anim-delay-offset));
+
+    @include breakpoint('phone') {
       padding-left: 12px;
       padding-right: 12px;
     }
