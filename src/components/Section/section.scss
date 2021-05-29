@@ -195,7 +195,7 @@
 
       @include breakpoint('phone-max') {
         left: auto;
-        right: 0;
+        right: -8%;
         transform: translate(39%, -50%);
       }
     }
@@ -207,7 +207,7 @@
 
       @include breakpoint('phone-max') {
         right: auto;
-        left: 0;
+        left: -8%;
         transform: translate(-39%, -50%);
       }
     }
