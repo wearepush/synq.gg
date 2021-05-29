@@ -1,0 +1,18 @@
+@mixin anim-init-fade-scale-in() {
+  opacity: 0.01;
+  transform: scale(var(--anim-scale-from));
+}
+
+@mixin anim-init-fade-slide-in() {
+  opacity: 0.01;
+  transform: translate3d(0, var(--anim-slide-y), 0);
+}
+
+@mixin anim-init-slide-rotate-in {
+  transform: translate3d(var(--anim-slide-x), 0, 0) rotateY(--anim-rotate-y);
+}
+
+@mixin anim-init-reveal-in-from-bottom() {
+  clip-path: inset(0 0 100% 0);
+  transform: translate3d(0, var(--anim-reveal-y), 0);
+}

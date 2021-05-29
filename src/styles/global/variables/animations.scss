@@ -1,0 +1,17 @@
+:root {
+  --anim-default-duration: 0.5s;
+  --anim-medium-duration: 0.7s;
+  --anim-long-duration: 0.9s;
+
+  --anim-scale-from: 0.4;
+  --anim-scale-to: 1;
+
+  --anim-easing-in: cubic-bezier(0.33, 1, 0.68, 1); // easeOutCubic slow at the end
+  --anim-easing-in-back: cubic-bezier(0.34, 1.56, 0.64, 1); // easeOutBack slow at the end with back
+  --anim-easing-in-out: cubic-bezier(0.65, 0, 0.35, 1); // easeInOutCubic slow at the beginning and at the end
+
+  --anim-reveal-y: 60%;
+  --anim-slide-y: 60%;
+  --anim-slide-x: 80%;
+  --anim-rotate-y: 30deg;
+}
