@@ -126,7 +126,8 @@
         &--left,
         &--right {
           visibility: visible;
-          animation: slide-rotate-in calc(var(--anim-default-duration) * 2) var(--anim-easing-in-out) forwards;
+          animation: slide-rotate-in calc(var(--anim-default-duration) * 2)
+            var(--anim-easing-in-out) forwards;
         }
       }
     }
@@ -152,6 +153,15 @@
       max-width: 100%;
       width: 100%;
     }
+
+    &--main,
+    &--right,
+    &--left {
+      @include breakpoint('phone-max') {
+        position: absolute;
+      }
+    }
+
     &--main {
       z-index: 3;
 
@@ -160,10 +170,9 @@
         var(--anim-easing-in-back) forwards;
 
       @include breakpoint('phone-max') {
-        left: 50%;
-        right: 50%;
-        transform: translate(-50%);
+        left: 18%;
         width: 64%;
+        top: 0;
       }
     }
 
@@ -174,8 +183,8 @@
 
       @include breakpoint('phone-max') {
         width: 53%;
-        top: 50%;
         margin-top: -17px;
+        top: 8%;
       }
     }
 
