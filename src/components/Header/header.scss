@@ -4,14 +4,14 @@
 .header {
   --header-anim-delay: 1s;
   --header-anim-delay-offset: 0.2s;
-
   background-color: var(--background-color-light);
   padding: 32px 0;
-  // position: fixed;
-  // top: 0;
-  // right: 0;
-  // left: 0;
-  // z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  left: 0;
+  right: 0;
 
   @include breakpoint('phone-max') {
     padding: 16px 0;
