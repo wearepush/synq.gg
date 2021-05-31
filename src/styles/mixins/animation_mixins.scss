@@ -9,7 +9,7 @@
 }
 
 @mixin anim-init-slide-rotate-in {
-  transform: translate3d(var(--anim-slide-x), 0, 0) rotateY(var(--anim-rotate-y));
+  transform: translate3d(var(--anim-slide-x), 0, var(--anim-translate-z)) rotateY(var(--anim-rotate-y));
 }
 
 @mixin anim-init-reveal-in-from-bottom() {

@@ -22,13 +22,13 @@
 
 @keyframes slide-rotate-in {
   0% {
-    transform: translate3d(var(--anim-slide-x), 0, 0) rotateY(var(--anim-rotate-y));
+    transform: translate3d(var(--anim-slide-x), 0, var(--anim-translate-z)) rotateY(var(--anim-rotate-y));
   }
   50% {
-    transform: translate3d(0, 0, 0) rotateY(var(--anim-rotate-y));
+    transform: translate3d(0, 0, var(--anim-translate-z)) rotateY(var(--anim-rotate-y));
   }
   100% {
-    transform: translate3d(0, 0, 0) rotateY(0);
+    transform: translate3d(0, 0, var(--anim-translate-z)) rotateY(0);
   }
 }
 
