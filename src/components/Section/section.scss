@@ -30,13 +30,17 @@
 
     @include anim-init-fade-scale-in();
     animation: fade-scale-in var(--anim-medium-duration) var(--section-anim-delay)
-      var(--anim-easing-in) forwards;
+    var(--anim-easing-in) forwards;
+
+    @include breakpoint('tablet') {
+      height: 709px;
+      max-width: 740px;
+    }
 
     @include breakpoint('phone-max') {
-      background: url('../../images/bg/home-bg-mobile.svg') no-repeat center;
-      height: 448px;
-      max-width: 100%;
-      top: -101px;
+      height: 360px;
+      max-width: 375px;
+      top: -80px;
     }
   }
 
