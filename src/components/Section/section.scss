@@ -32,8 +32,13 @@
     animation: fade-scale-in var(--anim-medium-duration) var(--section-anim-delay)
     var(--anim-easing-in) forwards;
 
+    @include breakpoint('tablet-desktop'){
+      height: 961px;
+      max-width: 1002px;
+    }
+
     @include breakpoint('tablet') {
-      height: 709px;
+      height: 710px;
       max-width: 740px;
     }
 
