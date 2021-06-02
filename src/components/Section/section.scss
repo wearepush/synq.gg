@@ -18,14 +18,14 @@
   &:after {
     content: '';
     position: absolute;
-    top: -150px;
+    top: -112px;
     left: 0;
     right: 0;
     background: url('../../images/bg/home-bg.svg') no-repeat center;
     background-size: cover;
     width: 100%;
-    height: 1048px;
-    max-width: 1048px;
+    height: 1012px;
+    max-width: 1049px;
     z-index: 1;
 
     @include anim-init-fade-scale-in();
