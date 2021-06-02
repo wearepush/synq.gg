@@ -15,7 +15,6 @@
   transition: background-color var(--anim-default-duration) var(--anim-easing-in-out);
 
   &--is-transparent {
-
     .header__logo__content {
       opacity: 0.01;
     }

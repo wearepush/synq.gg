@@ -9,9 +9,7 @@
   background-color: var(--background-color-dark);
   position: relative;
 
-  @include breakpoint('phone-max') {
-    border-radius: 0 0 26px 26px;
-  }
+
 
   &:after {
     content: '';
@@ -47,14 +45,15 @@
     }
   }
 
-  @include breakpoint('phone-max') {
-    padding: 70px 0 80px;
-  }
-
   &__wrapper {
     background-color: var(--background-color-light);
     border-radius: 0 0 36px 36px;
     padding: 88px 0 58px;
+
+    @include breakpoint('phone-max') {
+      border-radius: 0 0 26px 26px;
+      padding: 70px 0 80px;
+    }
   }
 
   &__container {
