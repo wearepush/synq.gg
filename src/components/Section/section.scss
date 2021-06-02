@@ -30,9 +30,9 @@
 
     @include anim-init-fade-scale-in();
     animation: fade-scale-in var(--anim-medium-duration) var(--section-anim-delay)
-    var(--anim-easing-in) forwards;
+      var(--anim-easing-in) forwards;
 
-    @include breakpoint('tablet-desktop'){
+    @include breakpoint('tablet-desktop') {
       height: 961px;
       max-width: 1002px;
     }
@@ -204,8 +204,8 @@
 
       @include breakpoint('phone-max') {
         left: auto;
-        right: -8%;
-        transform: translate(39%, -50%);
+        right: -12%;
+        // transform: translate(39%, -50%);
       }
     }
 
@@ -216,8 +216,8 @@
 
       @include breakpoint('phone-max') {
         right: auto;
-        left: -8%;
-        transform: translate(-39%, -50%);
+        left: -12%;
+        // transform: translate(-39%, -50%);
       }
     }
   }

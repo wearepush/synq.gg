@@ -12,6 +12,15 @@
   width: 100%;
   left: 0;
   right: 0;
+  transition: background-color var(--anim-default-duration) var(--anim-easing-in-out);
+
+  &--is-transparent {
+    background-color: transparent;
+
+    .header__logo__content {
+      opacity: 0.01;
+    }
+  }
 
   @include breakpoint('phone-max') {
     padding: 16px 0;
@@ -55,6 +64,9 @@
     &__content {
       position: relative;
       z-index: 2;
+      opacity: 0.99;
+      transition: opacity var(--anim-default-duration) var(--anim-easing-in-out);
+
       @include breakpoint('phone-max') {
         display: none;
       }
