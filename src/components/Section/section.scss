@@ -232,10 +232,6 @@
     align-items: center;
     animation-delay: calc(var(--section-anim-delay) + var(--section-anim-offset) * 3);
 
-    // &:hover {
-    //   background-color: var(--background-color-primary-hover);
-    // }
-
     @include breakpoint('phone-max') {
       max-width: 100%;
     }
@@ -250,7 +246,7 @@
       padding: 18px;
       max-width: 294px;
       width: 100%;
-      margin-right: -8px;
+      margin-right: -10px;
       position: relative;
       z-index: 2;
 
@@ -277,7 +273,7 @@
       line-height: 24px;
       font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.4s;
+      transition: all 0.4s;
 
       &:hover,
       &:focus {
