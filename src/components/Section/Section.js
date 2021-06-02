@@ -22,39 +22,42 @@ const Section = () => {
 
   return (
     <div className="section">
-      <div className="section__container">
-        <div className="section__content">
-          <div className="section__pre-title">Bet Together!</div>
-          <div className="section__title">
-            Wants <span>to be the first</span>? Subscribe to the newsletter and be aware of all the
-            most favorable sport odds.
+      <div className="section__wrapper">
+        <div className="section__container">
+          <div className="section__content">
+            <div className="section__pre-title">Bet Together!</div>
+            <div className="section__title">
+              Wants <span>to be the first</span>? Subscribe to the newsletter and be aware of all the
+              most favorable sport odds.
+            </div>
+            <form className="section__form">
+              <input type="email" className="section__form__input" placeholder="Enter your e-mail" />
+              <button className="section__form__button" type="submit">
+                Subscribe
+              </button>
+            </form>
           </div>
-          <form className="section__form">
-            <input type="email" className="section__form__input" placeholder="Enter your e-mail" />
-            <button className="section__form__button" type="submit">
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </div>
-      <div
-        className={cx('section__image-list', {
-          'section__image-list--is-main-anim-end': isMainImgAnimationEnd,
-        })}
-      >
-        <div className="section__image-item section__image-item--left">
-          <Image png={LeftImagePng} webp={LeftImageWebp} alt="synq 1" />
         </div>
         <div
-          className="section__image-item section__image-item--main"
-          onAnimationEnd={() => setMainImgAnimationEnd(true)}
+          className={cx('section__image-list', {
+            'section__image-list--is-main-anim-end': isMainImgAnimationEnd,
+          })}
         >
-          <Image png={MainImagePng} webp={MainImageWebp} alt="synq 2" />
-        </div>
-        <div className="section__image-item section__image-item--right">
-          <Image png={RightImagePng} webp={RightImageWebp} alt="synq 3" />
+          <div className="section__image-item section__image-item--left">
+            <Image png={LeftImagePng} webp={LeftImageWebp} alt="synq 1" />
+          </div>
+          <div
+            className="section__image-item section__image-item--main"
+            onAnimationEnd={() => setMainImgAnimationEnd(true)}
+          >
+            <Image png={MainImagePng} webp={MainImageWebp} alt="synq 2" />
+          </div>
+          <div className="section__image-item section__image-item--right">
+            <Image png={RightImagePng} webp={RightImageWebp} alt="synq 3" />
+          </div>
         </div>
       </div>
+
     </div>
   );
 };
