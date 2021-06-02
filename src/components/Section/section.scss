@@ -230,8 +230,11 @@
     border-radius: 16px;
     display: flex;
     align-items: center;
-
     animation-delay: calc(var(--section-anim-delay) + var(--section-anim-offset) * 3);
+
+    // &:hover {
+    //   background-color: var(--background-color-primary-hover);
+    // }
 
     @include breakpoint('phone-max') {
       max-width: 100%;
@@ -241,12 +244,15 @@
       background-color: var(--background-color-light);
       border: 2px solid var(--border-color-primary);
       border-radius: 16px;
-      color: var(--text-color-dark);
+      color: var(--header-text-color);
       font-size: 17px;
       line-height: 22px;
       padding: 18px;
       max-width: 294px;
       width: 100%;
+      margin-right: -8px;
+      position: relative;
+      z-index: 2;
 
       @include breakpoint('phone-max') {
         max-width: 100%;
@@ -257,7 +263,7 @@
       }
 
       &:focus {
-        border-color: var(--border-color-primary) !important;
+        border-color: var(--border-color-primary-hover) !important;
       }
     }
 
@@ -265,11 +271,18 @@
       background-color: var(--background-color-primary);
       border-radius: 0 16px 16px 0;
       border: 0;
-      padding: 19px 34px 19px 18px;
+      padding: 19px 34px 19px 26px;
       color: var(--background-color-light);
       font-size: 17px;
       line-height: 24px;
       font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.4s;
+
+      &:hover,
+      &:focus {
+        background-color: var(--background-color-primary-hover);
+      }
 
       @include breakpoint('phone-max') {
         padding: 19px 20px;
