@@ -102,6 +102,11 @@
 
     animation-delay: calc(var(--header-anim-delay) + var(--header-anim-delay-offset));
 
+    @include breakpoint('phone-max') {
+      padding-left: 22px;
+      padding-right: 22px;
+    }
+
     @include breakpoint('phone') {
       padding-left: 12px;
       padding-right: 12px;
