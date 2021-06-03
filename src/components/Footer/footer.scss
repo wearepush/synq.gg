@@ -6,6 +6,8 @@ $footer: 'footer';
 .#{$footer} {
   background-color: var(--background-color-dark);
   padding: 40px 0 37px;
+  position: relative;
+  z-index: 2;
 
   @include breakpoint('phone-max') {
     padding: 18px 0 42px;
