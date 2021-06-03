@@ -8,13 +8,13 @@ $footer: 'footer';
   padding: 40px 0 37px;
 
   @include breakpoint('phone-max') {
-    padding: 15px 0 42px;
+    padding: 18px 0 42px;
   }
 
   &__container {
     padding: 0 48px;
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 100%;
     width: 100%;
     letter-spacing: -.408px;
     line-height: 22px;

@@ -1,3 +1,6 @@
+@import '../variables';
+@import '../../mixins';
+
 html {
   font-size: 10px;
   line-height: 1.4;
@@ -37,4 +40,10 @@ input:focus {
 
 #gatsby-focus-wrapper {
   background-color: var(--background-color-light);
+  overflow: hidden;
+  padding-top: 114px;
+
+  @include breakpoint('phone-max') {
+    padding-top: 82px;
+  }
 }
