@@ -4,7 +4,7 @@
 html {
   font-size: 10px;
   line-height: 1.4;
-  background-color: #fff;
+  background-color: var(--background-color-dark);
   box-sizing: border-box;
 }
 
@@ -27,6 +27,7 @@ body {
   letter-spacing: -0.408px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
+  background-color: var(--background-color-dark);
 }
 
 textarea:focus,
