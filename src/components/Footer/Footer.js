@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="footer__logo">
         <div className="footer__logo__icon" />
         <div className="footer__logo__content">
-          <div className="footer__logo__name">Synq inc ©2021</div>
+          <div className="footer__logo__name">Synq inc.©2021</div>
           <div className="footer__logo__slogan">
             Connects sport fans to what they love
           </div>
