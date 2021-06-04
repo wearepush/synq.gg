@@ -3,11 +3,11 @@
 
 .subscription {
   --button-anim-time: 0.3s;
-  --line-anim-time: 1.2s;
+  --line-anim-time: 0.4s;
   --half-line-anim-time: 0.6s;
 
   width: 100%;
-  max-width: 420px;
+  max-width: 460px;
   display: flex;
 
   @include breakpoint('phone-max') {
@@ -56,8 +56,8 @@
     }
 
     @media (max-width: 374px) {
-      padding: 19px 18px 19px 18px;
-      width: 112px;
+      padding: 19px 10px 19px 10px;
+      font-size: 12px;
     }
     &--success,
     &--error {
@@ -147,7 +147,8 @@
 
 .input {
   &-container {
-    width: 100%;
+    display: flex;
+    flex: 1;
     position: relative;
     z-index: 1;
   }
@@ -176,7 +177,7 @@
       border-color: var(--border-color-primary-hover) !important;
     }
     &.animated {
-      animation: inputOpacity var(--line-anim-time);
+      animation: inputFill var(--line-anim-time);
       animation-delay: var(--button-anim-time);
       animation-timing-function: ease;
       animation-fill-mode: forwards;
@@ -208,7 +209,7 @@
   }
 }
 
-@keyframes inputOpacity {
+@keyframes inputFill {
   0% {
     opacity: 1;
   }

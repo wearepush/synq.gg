@@ -26,10 +26,10 @@ const Section = () => {
       <div className="section__wrapper">
         <div className="section__container">
           <div className="section__content">
-            <div className="section__pre-title">Bet Together!</div>
+            <div className="section__pre-title">Be in the know.</div>
             <div className="section__title">
-              Wants <span>to be the first</span>? Subscribe to the newsletter and be aware of all
-              the most favorable sport odds.
+              Join our community of punters <span>to be the first</span> to get exclusive access to
+              the best sports betting odds, picks, and takes. You in?
             </div>
             <SubscriptionForm />
           </div>

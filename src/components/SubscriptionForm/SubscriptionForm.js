@@ -58,7 +58,6 @@ const SubscriptionFom = () => {
             subscription={{ submitting: true, pristine: true, errors: true, touched: true }}
             render={({ handleSubmit, submitting, pristine, errors, touched }) => {
               const isFiledError = errors && errors.EMAIL && touched.EMAIL;
-              console.log(isFiledError);
               return (
                 <div className="subscription">
                   <div className="subscription__inner-wrapper">
@@ -76,7 +75,7 @@ const SubscriptionFom = () => {
                         })}
                         type="submit"
                       >
-                        Subscribe
+                        Join the waitlist
                       </button>
                       <div
                         className={cx('subscription__success-line', {
