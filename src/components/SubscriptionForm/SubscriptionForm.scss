@@ -1,0 +1,219 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.subscription {
+  --button-anim-time: 0.3s;
+  --line-anim-time: 0.4s;
+  --half-line-anim-time: 0.6s;
+
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+
+  @include breakpoint('phone-max') {
+    max-width: 100%;
+  }
+  &__inner-wrapper {
+    // fix overflowed error text => cuz parent animation
+    position: relative;
+    width: 100%;
+    height: 86px;
+  }
+
+  &__form {
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--border-color-primary);
+  }
+
+  &__button {
+    position: relative;
+    z-index: 2;
+    background-color: var(--background-color-primary);
+    border-radius: 0 16px 16px 0;
+    border: 0;
+    padding: 19px 22px 19px 25px;
+    color: var(--background-color-light);
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    user-select: none;
+    -webkit-appearance: none;
+
+    &:hover,
+    &:focus {
+      background-color: var(--background-color-primary-hover);
+    }
+
+    &:focus {
+      outline: 0 !important;
+    }
+
+    @media (max-width: 374px) {
+      padding: 19px 10px 19px 10px;
+      font-size: 12px;
+    }
+    &--success,
+    &--error {
+      opacity: 0;
+    }
+  }
+  &__success-line {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 16px 0 0 16px;
+    &--success {
+      background-color: var(--background-color-primary-hover);
+    }
+    &--error {
+      background-color: firebrick;
+    }
+    &.animate {
+      animation: fillField var(--line-anim-time);
+      animation-delay: var(--button-anim-time);
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+  }
+  &__info {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 320px;
+    min-width: 260px;
+    padding: 0 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    opacity: 0;
+    &.animate {
+      z-index: 3;
+      animation: infoOpacity var(--line-anim-time);
+      animation-delay: var(--half-line-anim-time);
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+    &--error {
+      right: 0;
+    }
+  }
+  &__success-text {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding-left: 15px;
+  }
+  &__error-text {
+    font-size: 14px;
+    a {
+      color: #fff;
+    }
+  }
+  &__loader {
+    position: absolute;
+    z-index: 3;
+    right: 42px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  &__input-field-error {
+    position: absolute;
+    font-size: 12px;
+    bottom: 3px;
+    left: 15px;
+    color: firebrick;
+  }
+}
+
+.input {
+  &-container {
+    display: flex;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+  }
+  &__field {
+    width: 100%;
+    border: 2px solid var(--border-color-primary);
+    border-right: 0;
+    border-radius: 16px 8px 8px 16px;
+    color: var(--header-text-color);
+    font-size: 17px;
+    line-height: 22px;
+    padding: 18px;
+    position: relative;
+    z-index: 2;
+    -webkit-appearance: none;
+    @include breakpoint('phone-max') {
+      max-width: 100%;
+      margin-right: -15px;
+    }
+
+    &::-webkit-input-placeholder {
+      color: var(--text-color-light-gray);
+    }
+
+    &:focus {
+      border-color: var(--border-color-primary-hover) !important;
+    }
+    &.animated {
+      animation: inputFill var(--line-anim-time);
+      animation-delay: var(--button-anim-time);
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+  }
+  &__error {
+    position: absolute;
+    top: 100%;
+    left: 15px;
+    color: firebrick;
+  }
+}
+
+@keyframes fillField {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes infoOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes inputFill {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

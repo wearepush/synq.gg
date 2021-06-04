@@ -28,7 +28,6 @@
     animation: fade-scale-in var(--anim-medium-duration) var(--section-anim-delay)
       var(--anim-easing-in) forwards;
 
-
     @include breakpoint('phone-max') {
       // height: 360px;
       // max-width: 375px;
@@ -73,7 +72,7 @@
     max-width: 604px;
     width: 100%;
     margin: 0 auto;
-    padding-bottom: 140px;
+    padding-bottom: 116px;
     position: relative;
     z-index: 2;
 
@@ -84,11 +83,15 @@
 
   &__pre-title,
   &__title,
-  &__form {
+  .subscription {
     @include anim-init-reveal-in-from-bottom();
     animation: reveal-in-from-bottom var(--anim-long-duration)
       calc(var(--section-anim-delay) + var(--section-anim-offset)) var(--anim-easing-in-back)
       forwards;
+  }
+
+  .subscription {
+    animation-delay: calc(var(--section-anim-delay) + var(--section-anim-offset) * 3);
   }
 
   &__pre-title {
@@ -97,7 +100,6 @@
     line-height: 39px;
     font-weight: 600;
     margin-bottom: 10px;
-    text-transform: capitalize;
 
     @include breakpoint('phone-max') {
       font-size: 20px;
@@ -111,6 +113,7 @@
     line-height: 56px;
     font-weight: bold;
     margin-bottom: 34px;
+    max-width: 570px;
 
     animation-delay: calc(var(--section-anim-delay) + var(--section-anim-offset) * 2);
 
@@ -222,76 +225,6 @@
         right: auto;
         left: -12%;
         // transform: translate(-39%, -50%);
-      }
-    }
-  }
-
-  &__form {
-    max-width: 420px;
-    width: 100%;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    animation-delay: calc(var(--section-anim-delay) + var(--section-anim-offset) * 3);
-
-    @include breakpoint('phone-max') {
-      max-width: 100%;
-    }
-
-    &__input {
-      background-color: var(--background-color-light);
-      border: 2px solid var(--border-color-primary);
-      border-radius: 16px;
-      color: var(--header-text-color);
-      font-size: 17px;
-      line-height: 22px;
-      padding: 18px;
-      max-width: 294px;
-      width: 100%;
-      margin-right: -16px;
-      position: relative;
-      z-index: 2;
-      -webkit-appearance: none;
-
-      @include breakpoint('phone-max') {
-        max-width: 100%;
-        margin-right: -15px;
-      }
-
-      &::-webkit-input-placeholder {
-        color: var(--text-color-light-gray);
-      }
-
-      &:focus {
-        border-color: var(--border-color-primary-hover) !important;
-      }
-    }
-
-    &__button {
-      background-color: var(--background-color-primary);
-      border-radius: 0 16px 16px 0;
-      border: 0;
-      padding: 19px 25px 19px 37px;
-      color: var(--background-color-light);
-      font-size: 17px;
-      line-height: 24px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.4s;
-      user-select: none;
-      -webkit-appearance: none;
-
-      &:hover,
-      &:focus {
-        background-color: var(--background-color-primary-hover);
-      }
-
-      &:focus {
-        outline: 0 !important;
-      }
-
-      @include breakpoint('phone-max') {
-        padding: 19px 18px 19px 31px;
       }
     }
   }

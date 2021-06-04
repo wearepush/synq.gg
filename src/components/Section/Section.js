@@ -7,6 +7,7 @@ import LeftImageWebp from '../../images/left-image-item-2x.webp';
 import LeftImagePng from '../../images/left-image-item-2x.png';
 import RightImageWebp from '../../images/right-image-item-2x.webp';
 import RightImagePng from '../../images/right-image-item-2x.png';
+import SubscriptionForm from '../SubscriptionForm/SubscriptionForm';
 
 const Image = ({ alt, webp, png }) => {
   return (
@@ -25,17 +26,12 @@ const Section = () => {
       <div className="section__wrapper">
         <div className="section__container">
           <div className="section__content">
-            <div className="section__pre-title">Bet Together!</div>
+            <div className="section__pre-title">Be in the know.</div>
             <div className="section__title">
-              Wants <span>to be the first</span>? Subscribe to the newsletter and be aware of all the
-              most favorable sport odds.
+              Join our community of punters <span>to be the first</span> to get exclusive access to
+              the best sports betting odds, picks, and takes. You in?
             </div>
-            <form className="section__form">
-              <input type="email" className="section__form__input" placeholder="Enter your e-mail" />
-              <button className="section__form__button" type="submit">
-                Subscribe
-              </button>
-            </form>
+            <SubscriptionForm />
           </div>
         </div>
         <div
@@ -57,7 +53,6 @@ const Section = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };
