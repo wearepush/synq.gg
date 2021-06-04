@@ -64,7 +64,6 @@ const SubscriptionFom = () => {
                     <div className="subscription__form">
                       <Input
                         name="EMAIL"
-                        inputClassName={cx({ animated: shouldAnimate })}
                         placeholder="Enter your e-mail"
                       />
                       <button

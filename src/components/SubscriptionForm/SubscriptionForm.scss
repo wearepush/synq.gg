@@ -3,8 +3,7 @@
 
 .subscription {
   --button-anim-time: 0.3s;
-  --line-anim-time: 0.4s;
-  --half-line-anim-time: 0.6s;
+  --animation-time: 4s;
 
   width: 100%;
   max-width: 460px;
@@ -59,14 +58,10 @@
       padding: 19px 10px 19px 10px;
       font-size: 12px;
     }
-    &--success,
-    &--error {
-      opacity: 0;
-    }
   }
   &__success-line {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     right: 0;
     top: 0;
     bottom: 0;
@@ -75,14 +70,14 @@
     overflow: hidden;
     border-radius: 16px 0 0 16px;
     &--success {
-      background-color: var(--background-color-primary-hover);
+      animation: fillFieldSuccess var(--animation-time);
+      animation-delay: 0;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
     }
     &--error {
-      background-color: firebrick;
-    }
-    &.animate {
-      animation: fillField var(--line-anim-time);
-      animation-delay: var(--button-anim-time);
+      animation: fillFieldError var(--animation-time);
+      animation-delay: 0;
       animation-timing-function: ease;
       animation-fill-mode: forwards;
     }
@@ -106,9 +101,9 @@
     color: #fff;
     opacity: 0;
     &.animate {
-      z-index: 3;
-      animation: infoOpacity var(--line-anim-time);
-      animation-delay: var(--half-line-anim-time);
+      z-index: 4;
+      animation: infoOpacity var(--animation-time);
+      animation-delay: 0;
       animation-timing-function: ease;
       animation-fill-mode: forwards;
     }
@@ -176,12 +171,6 @@
     &:focus {
       border-color: var(--border-color-primary-hover) !important;
     }
-    &.animated {
-      animation: inputFill var(--line-anim-time);
-      animation-delay: var(--button-anim-time);
-      animation-timing-function: ease;
-      animation-fill-mode: forwards;
-    }
   }
   &__error {
     position: absolute;
@@ -191,12 +180,41 @@
   }
 }
 
-@keyframes fillField {
+@keyframes fillFieldSuccess {
   0% {
     width: 0;
+    background-color: rgba(14, 164, 277, 0);
+  }
+  14% {
+    width: 100%;
+    background-color: rgba(14, 164, 277, 1);
+  }
+  86% {
+    width: 100%;
+    background-color: rgba(14, 164, 277, 1);
   }
   100% {
+    width: 0;
+    background-color: rgba(14, 164, 277, 0);
+  }
+}
+
+@keyframes fillFieldError {
+  0% {
+    width: 0;
+    background-color: rgba(178, 34, 34, 0);
+  }
+  14% {
     width: 100%;
+    background-color: rgba(178, 34, 34, 1);
+  }
+  86% {
+    width: 100%;
+    background-color: rgba(178, 34, 34, 1);
+  }
+  100% {
+    width: 0;
+    background-color: rgba(178, 34, 34, 0);
   }
 }
 
@@ -204,13 +222,10 @@
   0% {
     opacity: 0;
   }
-  100% {
+  14% {
     opacity: 1;
   }
-}
-
-@keyframes inputFill {
-  0% {
+  86% {
     opacity: 1;
   }
   100% {
