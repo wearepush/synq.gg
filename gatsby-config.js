@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/synq.gg",
+  pathPrefix: "",
   siteMetadata: {
     title: "SYNQ",
   },
