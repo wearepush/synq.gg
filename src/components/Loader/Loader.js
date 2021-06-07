@@ -4,11 +4,12 @@ import './Loader.scss';
 
 function Loader({ className }) {
   return (
-    <div class={cx('loader', { [className]: !!className })}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div className={cx('loader', { [className]: !!className })}>
+      <div className="loader-piece"></div>
+      <div className="loader-piece"></div>
+      <div className="loader-piece"></div>
+      <div className="loader-piece"></div>
+      <div className="loader-circle" />
     </div>
   );
 }
