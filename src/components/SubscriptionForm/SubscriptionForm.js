@@ -3,6 +3,7 @@ import { Field, Form } from 'react-final-form';
 import cx from 'classnames';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import memoize from 'lru-memoize';
+import Loader from '../Loader/Loader';
 import { createValidator, email, required } from '../../utils/validation';
 import './SubscriptionForm.scss';
 
@@ -47,7 +48,7 @@ const SubscriptionFom = () => {
     <MailchimpSubscribe
       url={URL}
       render={({ subscribe, status, message }) => {
-        // const isLoading = status === 'sending';
+        const isLoading = status === 'sending';
         const isSuccess = status === 'success';
         const isError = status === 'error';
         const shouldAnimate = isSuccess || isError;
@@ -58,15 +59,14 @@ const SubscriptionFom = () => {
             subscription={{ submitting: true, pristine: true, errors: true, touched: true }}
             render={({ handleSubmit, submitting, pristine, errors, touched }) => {
               const isFiledError = errors && errors.EMAIL && touched.EMAIL;
+
               return (
                 <div className="subscription">
                   <div className="subscription__inner-wrapper">
                     <div className="subscription__form">
-                      <Input
-                        name="EMAIL"
-                        placeholder="Enter your e-mail"
-                      />
+                      <Input name="EMAIL" placeholder="Enter your e-mail" />
                       <button
+                        disabled={submitting || pristine || isLoading}
                         onClick={handleSubmit}
                         className={cx('subscription__button', {
                           'subscription__button--success': isSuccess,
@@ -74,7 +74,7 @@ const SubscriptionFom = () => {
                         })}
                         type="submit"
                       >
-                        Join the waitlist
+                        {isLoading ? <Loader className="subscription__loader" /> : 'Join the waitlist'}
                       </button>
                       <div
                         className={cx('subscription__success-line', {
@@ -92,8 +92,14 @@ const SubscriptionFom = () => {
                       >
                         {isSuccess ? (
                           <span className="subscription__success-text">
-                            <span aria-label="celebrate
-                            " role="img">&#127881;</span> <span>Subscribed successfully</span>
+                            <span
+                              aria-label="celebrate
+                            "
+                              role="img"
+                            >
+                              &#127881;
+                            </span>{' '}
+                            <span>Subscribed successfully</span>
                           </span>
                         ) : (
                           <span

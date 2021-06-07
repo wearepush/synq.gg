@@ -44,6 +44,7 @@
     transition: all 0.3s;
     user-select: none;
     -webkit-appearance: none;
+    min-width: 164px;
 
     &:hover,
     &:focus {
@@ -57,6 +58,7 @@
     @media (max-width: 374px) {
       padding: 19px 10px 19px 10px;
       font-size: 12px;
+      min-width: 103px;
     }
   }
   &__success-line {
@@ -126,7 +128,8 @@
   &__loader {
     position: absolute;
     z-index: 3;
-    right: 42px;
+    right: 0;
+    left: 0;
     top: 0;
     bottom: 0;
     margin: auto;
