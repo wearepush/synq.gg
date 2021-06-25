@@ -13,6 +13,33 @@ const validate = memoize(10)(
   })
 );
 
+const subscriptionGroups = [
+  {
+    value: 1,
+    name: 'intheknow',
+  },
+  {
+    value: 2,
+    name: 'strongertogether',
+  },
+  {
+    value: 4,
+    name: 'bettogether',
+  },
+  {
+    value: 8,
+    name: 'edge',
+  },
+  {
+    value: 16,
+    name: 'home',
+  },
+  {
+    value: 32,
+    name: 'community',
+  },
+];
+
 const URL = `https://synq.us6.list-manage.com/subscribe/post?u=97002b477386c8792a14edf1f&id=41b1982d15`;
 
 const Input = ({ name, className, inputClassName, ...rest }) => (
@@ -32,18 +59,14 @@ const Input = ({ name, className, inputClassName, ...rest }) => (
             value={input.value}
             {...rest}
           />
-          {/* {error && touched && (
-            <div className="input__error" pointerEvents="none">
-              {error}
-            </div>
-          )} */}
         </div>
       );
     }}
   </Field>
 );
 
-const SubscriptionFom = () => {
+const SubscriptionFom = ({ pageKey }) => {
+  const groupObj = subscriptionGroups.find(c => c.name === pageKey);
   return (
     <MailchimpSubscribe
       url={URL}
@@ -54,7 +77,12 @@ const SubscriptionFom = () => {
         const shouldAnimate = isSuccess || isError;
         return (
           <Form
-            onSubmit={(formData) => subscribe(formData)}
+            onSubmit={(formData) =>
+              subscribe(formData)
+            }
+            initialValues={{
+              'group[20274]': groupObj?.value || null
+            }}
             validate={validate}
             subscription={{ submitting: true, pristine: true, errors: true, touched: true }}
             render={({ handleSubmit, submitting, pristine, errors, touched }) => {
@@ -74,7 +102,11 @@ const SubscriptionFom = () => {
                         })}
                         type="submit"
                       >
-                        {isLoading ? <Loader className="subscription__loader" /> : 'Join the waitlist'}
+                        {isLoading ? (
+                          <Loader className="subscription__loader" />
+                        ) : (
+                          'Join the waitlist'
+                        )}
                       </button>
                       <div
                         className={cx('subscription__success-line', {

@@ -18,20 +18,20 @@ const Image = ({ alt, webp, png }) => {
   );
 };
 
-const Section = () => {
+const Section = ({ bodyTitle, bodyDescription, pageKey }) => {
   const [isMainImgAnimationEnd, setMainImgAnimationEnd] = useState(false);
-
   return (
     <div className="section">
       <div className="section__wrapper">
         <div className="section__container">
           <div className="section__content">
-            <div className="section__pre-title">Be in the know.</div>
-            <div className="section__title">
-              Join our community of punters <span>to be the first</span> to get exclusive access to
-              the best sports betting odds, picks, and takes. You in?
+            <div className="section__pre-title">
+              {bodyTitle}
             </div>
-            <SubscriptionForm />
+            <div className="section__title">
+             {bodyDescription}
+            </div>
+            <SubscriptionForm pageKey={pageKey} />
           </div>
         </div>
         <div

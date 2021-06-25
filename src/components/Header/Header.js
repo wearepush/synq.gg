@@ -3,7 +3,7 @@ import cx from 'classnames';
 import HeaderLogo from '../../images/logo/logo_icon.inline.svg';
 import './header.scss';
 
-const Header = () => {
+const Header = ({title}) => {
   const headerRef = useRef();
   const [isTransparent, setIsTransparent] = useState(false);
 
@@ -37,7 +37,7 @@ const Header = () => {
           <HeaderLogo className="header__logo__icon" />
           <div className="header__logo__content">
             <div className="header__logo__name">Synq</div>
-            <div className="header__logo__slogan">Sportsbetting Takes. Always live, always free.</div>
+            <div className="header__logo__slogan">{title}</div>
           </div>
         </div>
         <div className="header__button">Soon on iOS & Android</div>
